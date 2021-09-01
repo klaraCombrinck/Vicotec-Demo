@@ -13,47 +13,14 @@ body, html {
   box-sizing: border-box;
 }
 
-h1 {
+h1, h2, h3 {
   color: #FFBF00;
-  text-shadow: 5px 2px 4px #282D34;
   margin: 0;
-  /* margin-bottom: 4rem; */
-  letter-spacing: 0.3rem;
-  font-size: 16vmin;
-  line-height: 16vmin;
 }
 
-h2 {
-  color: #FFBF00;
+h2, h3 {
+  font-weight: lighter;
   text-shadow: 1px 1px 1px #282D34;
-  margin: 0;
-  font-weight: lighter;
-  font-size: 10vmin;
-  line-height: 10vmin;
-  
-}
-
-h3 {
-  color: #FFBF00;
-  text-shadow: 1px 1px 1px #282D34;
-  margin: 0;
-  font-weight: lighter;
-  font-size: 2rem;
-  line-height: 2.3rem;
-}
-
-h4 {
-  font-weight: lighter;
-  font-size: 1.5rem;
-}
-
-h5 {
-  color: #FFBF00;
-  text-shadow: 1px 1px 1px #282D34;
-  margin: 0;
-  font-weight: lighter;
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 a {
@@ -68,115 +35,70 @@ a:hover {
           transition-duration: 0.3s;
 }
 
-/* Containers */
+/* ==================================  Containers ============================ */
 
-.container-fluid {
+.container-fluid {  /* see media queries for responsive changes */
   padding: 1% 15%;
 }
 
+.section {
+  text-align: center;
+  background-color: #282e34;
+  color: #ddd;
+}
 
-/* Title & Navigation Bar */
+.section-header {
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
 
-.title-nav-wrapper {
+/* =========================== Title & Navigation Bar ==========================*/
+
+.top-nav-wrapper {
   width: 100vw;
   box-sizing: border-box;
   padding: 1% 5%;
   
   position: fixed; /* Position: fixed at top of browser window when scrolling */
   top: 0;
-  z-index: 999; 
+  z-index: 999; /* on top of absolute children */
     
   display: flex;
-  justify-content: flex-end;
-
+  justify-content: flex-end; /* float left */
+  
   background-color: #282e34;
   color:  rgb(221, 221, 221);
   }
-  
-  /* Title Navigation Bar - float left */
-
-  .title-nav-items {
-    margin: 0;      /*removes default list structure*/
-    padding: 0.3rem;    
-    font-size: 1rem;
-  }
-
-  .title-nav-link {
-    display: inline;
-    text-align: center;
-    margin-left: 1rem;
-  }
-
-/* Other Navigation Bars - centered */
 
 .nav-items {
-  text-decoration: none;
-  margin: 0;  
-  padding: 0.3rem;
+  margin: 0;  /*removes default list structure*/
+  padding: 0.3rem;    
   font-size: 1rem;
 }
-.centered-nav-list {
+
+.nav-link {
   display: inline;
   text-align: center;
   margin-left: 1rem;
 }
-.nav-link-dark {
-  color: #666;
-}
-.nav-link-light {
-  color: rgb(255, 255, 255);
-}
 
-/* Text Sections Formatting */
-.section {
-  text-align: center;
-  background-color: rgba(221, 221, 221, 0);
+/* ===================================  Home  ================================== */
+
+/* Vicotec h1 */
+.main-heading {
+  text-shadow: 5px 2px 4px #282D34;
+  letter-spacing: 0.3rem;
+  font-size: 16vmin;
+  line-height: 16vmin;
 }
 
-
-.section-dark {
-  background-color: #282e34;
-  color: #ddd;
+/* Engineering h2 */
+.second-heading {
+  font-size: 10vmin;
+  line-height: 10vmin;
 }
 
-/* ================================================== Main Content =================================================== */
-
-/* Home Section Images*/
-.p-img1 {
-  background-image: url("images/bg1.jpg");
-  height: 94vh;  /* height within div */ 
-  
-  position: relative;  /* changes relative to normal place */
-  background-attachment: fixed;       /* fixed: gives parallax effect, scroll: normal */  
-  background-position: center;        /* image centered in div */
-  background-repeat: no-repeat;       /* just one image in div */
-  background-size: cover;             /* scales img as large as poss to fill container (may stretch) */
-}
-
-
-/* empty span to provide nav bar offset for # navigation */
-.jump-to {
-  margin-top: -2rem;
-  margin-bottom: 2rem;
-  display: block;
-}
-
-
-/*  Home & Services text */
-.about-text {
-  position: absolute;  /* removed fr normal flow, positioned relative to closest positioned ancestor - p-img*/
-  top: 20vh;
-  width: 100%;
-  z-index: 99;
-    
-  justify-content: center;
-  text-align: center;
-
-  text-transform: uppercase;
-}
-
-/* Home section contact and services button */
-
+/* Contact and services buttons */
 .button-holder {
   margin-top: 5rem; 
   margin-bottom: 2rem;
@@ -199,39 +121,59 @@ a:hover {
   text-decoration: none;
 }
 
+/* ====================================== Services  =================================== */
+
+/* empty span to provide nav bar offset for # navigation // mobile issue - creates gap when scrolling */
+.jump-to {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+
 .scroll-down-icon {
   padding-top: 0.5rem;
   width: 30px;
 }
 
-.services-img {
+.about-text {
+  position: absolute;  /* removed fr normal flow, posit relative to closest positioned ancestor - p-img*/
+  top: 20vh;
+  width: 100%;
+  
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.services-img {    /* sizing is weird - fix */
   width: 70vw;
 }
 
-.p-img2 {
-  background-image: url("images/bg1.jpg");
-  height: 40vh;  
+/* ================================= Parallax images ================================== */
 
-  position: relative;  
-  background-attachment: fixed;       
-  background-position: center;        
-  background-repeat: no-repeat;      
-  background-size: cover;    
+.parallax {
+  background-image: url("images/bg1.jpg");
+
+  position: relative;  /* position changes relative to normal place */
+  background-attachment: fixed;       /* fixed: gives parallax effect, scroll: normal */  
+  background-position: center;        /* image centered in div */
+  background-repeat: no-repeat;       /* just one image in div */
+  background-size: cover;             /* scales img as large as poss to fill container (may stretch) */
+}
+
+.p-img1 {
+  height: 94vh;  /* height within div */ 
+}
+
+.p-img2 {
+  height: 30vh;     
 }
 
 .p-img3 {
-  background-image: url("images/bg1.jpg");
-  height: 30vh;  
-
-  position: relative;  
-  background-attachment: fixed;        
-  background-position: center;        
-  background-repeat: no-repeat;       
-  background-size: cover; 
+  height: 30vh;   
 }
 
-
-/* Contact Page Form */
+/* ===================================== Enquiries ==================================== */
 
 input[type=text], select, textarea {
   width: 100%;
@@ -243,6 +185,7 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
+
 input[type=submit] {
   background: #282e34;
   color: #FFBF00;
@@ -251,6 +194,7 @@ input[type=submit] {
   font-weight: bold;  
     cursor: pointer;
 }
+
 input[type=submit]:hover {
   background: #FFBF00;
   color: #282e34;
@@ -265,8 +209,7 @@ input[type=submit]:hover {
   margin: 20px auto 0 auto;
 }
 
-
-/* Footer */
+/* ====================================== Footer ===================================== */
 
 .footer {
   text-align: center;
@@ -281,11 +224,16 @@ input[type=submit]:hover {
   justify-content: space-around;
 }
 
+.contact-details-header {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
 
-/* Mobile - turn off parallax */
+/* ================================== Media Queries ================================== */
 
+/* Mobile */
 @media(max-width:650px){
-  .p-img1 .p-img2 .p-img3{
+  .parallax{
     background-attachment: scroll;
   }
 
@@ -302,6 +250,7 @@ input[type=submit]:hover {
   }
 }
 
+/* Widescreen */
 @media(min-width:1300px){
   .container-fluid {
     padding: 1% 20%;
@@ -319,5 +268,3 @@ input[type=submit]:hover {
     max-width: 750px;
   }
 }
-
-
