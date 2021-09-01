@@ -17,9 +17,10 @@ h1 {
   color: #FFBF00;
   text-shadow: 5px 2px 4px #282D34;
   margin: 0;
-  margin-bottom: 1.5rem;
-  font-size: 7rem;
+  /* margin-bottom: 4rem; */
   letter-spacing: 0.3rem;
+  font-size: 16vmin;
+  line-height: 16vmin;
 }
 
 h2 {
@@ -27,8 +28,8 @@ h2 {
   text-shadow: 1px 1px 1px #282D34;
   margin: 0;
   font-weight: lighter;
-  font-size: 4rem;
-  line-height: 1rem;
+  font-size: 10vmin;
+  line-height: 10vmin;
   
 }
 
@@ -38,7 +39,7 @@ h3 {
   margin: 0;
   font-weight: lighter;
   font-size: 2rem;
-  line-height: 3.5rem;
+  line-height: 2.3rem;
 }
 
 h4 {
@@ -171,11 +172,8 @@ a:hover {
   justify-content: center;
   text-align: center;
 
-  line-height: 6rem;      
   text-transform: uppercase;
 }
-
-
 
 /* Home section contact and services button */
 
@@ -207,7 +205,7 @@ a:hover {
 }
 
 .services-img {
-  max-width: 60vw;  
+  width: 70vw;
 }
 
 .p-img2 {
@@ -286,7 +284,7 @@ input[type=submit]:hover {
 
 /* Mobile - turn off parallax */
 
-@media(max-width:568px){
+@media(max-width:650px){
   .p-img1 .p-img2 .p-img3{
     background-attachment: scroll;
   }
@@ -296,19 +294,30 @@ input[type=submit]:hover {
   }
 
   .contact-details-box {
-    display: flex;
-    justify-content: space-between;
+    display: block;
   }
 
-
-
+  .title-nav-wrapper {
+    justify-content: center;
+  }
 }
 
-@media(min-width:1200px){
+@media(min-width:1300px){
   .container-fluid {
-    padding: 1% 25%;
+    padding: 1% 20%;
   }
 
+  h1 {
+    font-size: 9rem;
+  }
+  
+  h2 {
+    font-size: 5.5rem;
+  }
+
+  .services-img {
+    max-width: 750px;
+  }
 }
 
 
